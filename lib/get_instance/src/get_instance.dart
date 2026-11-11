@@ -357,12 +357,7 @@ class GetInstance {
 
     if (dep == null) return false;
 
-    final _InstanceBuilderFactory builder;
-    if (dep.isDirty) {
-      builder = dep.lateRemove ?? dep;
-    } else {
-      builder = dep;
-    }
+    final builder = dep.lateRemove ?? dep;
 
     if (builder.permanent && !force) {
       Get.log(
@@ -386,6 +381,11 @@ class GetInstance {
     if (builder.fenix) {
       builder.dependency = null;
       builder.isInit = false;
+      if (identical(builder, dep)) {
+        dep.isDirty = false;
+      } else {
+        dep.lateRemove = null;
+      }
       return true;
     } else {
       if (dep.lateRemove != null) {
