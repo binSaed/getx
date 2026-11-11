@@ -242,24 +242,26 @@ class GetMaterialApp extends StatelessWidget {
                 transitionDuration ?? Get.defaultTransitionDuration,
           );
         },
-        builder: (_) => routerDelegate != null
+        builder: (ctrl) => routerDelegate != null
             ? MaterialApp.router(
                 routerDelegate: routerDelegate!,
                 routeInformationParser: routeInformationParser!,
                 backButtonDispatcher: backButtonDispatcher,
                 routeInformationProvider: routeInformationProvider,
-                key: _.unikey,
+                key: ctrl.unikey,
                 builder: defaultBuilder,
                 title: title,
                 onGenerateTitle: onGenerateTitle,
                 color: color,
-                theme: _.theme ?? theme ?? ThemeData.fallback(),
-                darkTheme:
-                    _.darkTheme ?? darkTheme ?? theme ?? ThemeData.fallback(),
-                themeMode: _.themeMode ?? themeMode,
+                theme: ctrl.theme ?? theme ?? ThemeData.fallback(),
+                darkTheme: ctrl.darkTheme ??
+                    darkTheme ??
+                    theme ??
+                    ThemeData.fallback(),
+                themeMode: ctrl.themeMode ?? themeMode,
                 locale: Get.locale ?? locale,
                 scaffoldMessengerKey:
-                    scaffoldMessengerKey ?? _.scaffoldMessengerKey,
+                    scaffoldMessengerKey ?? ctrl.scaffoldMessengerKey,
                 localizationsDelegates: localizationsDelegates,
                 localeListResolutionCallback: localeListResolutionCallback,
                 localeResolutionCallback: localeResolutionCallback,
@@ -275,12 +277,12 @@ class GetMaterialApp extends StatelessWidget {
                 // useInheritedMediaQuery: useInheritedMediaQuery,
               )
             : MaterialApp(
-                key: _.unikey,
+                key: ctrl.unikey,
                 navigatorKey: (navigatorKey == null
                     ? Get.key
                     : Get.addKey(navigatorKey!)),
                 scaffoldMessengerKey:
-                    scaffoldMessengerKey ?? _.scaffoldMessengerKey,
+                    scaffoldMessengerKey ?? ctrl.scaffoldMessengerKey,
                 home: home,
                 routes: routes ?? const <String, WidgetBuilder>{},
                 initialRoute: initialRoute,
@@ -302,10 +304,12 @@ class GetMaterialApp extends StatelessWidget {
                 title: title,
                 onGenerateTitle: onGenerateTitle,
                 color: color,
-                theme: _.theme ?? theme ?? ThemeData.fallback(),
-                darkTheme:
-                    _.darkTheme ?? darkTheme ?? theme ?? ThemeData.fallback(),
-                themeMode: _.themeMode ?? themeMode,
+                theme: ctrl.theme ?? theme ?? ThemeData.fallback(),
+                darkTheme: ctrl.darkTheme ??
+                    darkTheme ??
+                    theme ??
+                    ThemeData.fallback(),
+                themeMode: ctrl.themeMode ?? themeMode,
                 locale: Get.locale ?? locale,
                 localizationsDelegates: localizationsDelegates,
                 localeListResolutionCallback: localeListResolutionCallback,

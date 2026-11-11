@@ -226,13 +226,13 @@ class GetCupertinoApp extends StatelessWidget {
                 transitionDuration ?? Get.defaultTransitionDuration,
           );
         },
-        builder: (_) => routerDelegate != null
+        builder: (ctrl) => routerDelegate != null
             ? CupertinoApp.router(
                 routerDelegate: routerDelegate!,
                 routeInformationParser: routeInformationParser!,
                 backButtonDispatcher: backButtonDispatcher,
                 routeInformationProvider: routeInformationProvider,
-                key: _.unikey,
+                key: ctrl.unikey,
                 theme: theme,
                 builder: defaultBuilder,
                 title: title,
@@ -252,7 +252,7 @@ class GetCupertinoApp extends StatelessWidget {
                 // useInheritedMediaQuery: useInheritedMediaQuery,
               )
             : CupertinoApp(
-                key: _.unikey,
+                key: ctrl.unikey,
                 theme: theme,
                 navigatorKey: (navigatorKey == null
                     ? Get.key

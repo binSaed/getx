@@ -1,4 +1,4 @@
-part of rx_stream;
+part of 'package:get/get_rx/src/rx_stream/rx_stream.dart';
 
 class Node<T> {
   T? data;

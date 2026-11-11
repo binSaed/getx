@@ -1,8 +1,8 @@
-part of rx_types;
+part of 'package:get/get_rx/src/rx_types/rx_types.dart';
 
 /// This class is the foundation for all reactive (Rx) classes that makes Get
 /// so powerful.
-/// This interface is the contract that _RxImpl]<T> uses in all it's
+/// This interface is the contract that `_RxImpl]<T>` uses in all it's
 /// subclass.
 abstract class RxInterface<T> {
   static RxInterface? proxy;

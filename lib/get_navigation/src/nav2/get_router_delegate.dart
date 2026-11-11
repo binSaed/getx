@@ -427,6 +427,7 @@ class GetNavigator extends Navigator {
   }) : super(
           //keys should be optional
           key: key,
+          // ignore: deprecated_member_use
           onPopPage: onPopPage ??
               (route, result) {
                 final didPop = route.didPop(result);

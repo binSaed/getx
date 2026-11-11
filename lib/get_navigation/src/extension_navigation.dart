@@ -169,6 +169,7 @@ extension ExtensionDialog on GetInterface {
     List<Widget>? actions,
 
     // onWillPop Scope
+    // ignore: deprecated_member_use
     WillPopCallback? onWillPop,
 
     // the navigator used to push the dialog
@@ -231,6 +232,7 @@ extension ExtensionDialog on GetInterface {
       titlePadding: titlePadding ?? const EdgeInsets.all(8),
       contentPadding: contentPadding ?? const EdgeInsets.all(8),
 
+      // ignore: deprecated_member_use
       backgroundColor: backgroundColor ?? theme.dialogBackgroundColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(radius))),
@@ -261,6 +263,7 @@ extension ExtensionDialog on GetInterface {
 
     return dialog<T>(
       onWillPop != null
+          // ignore: deprecated_member_use
           ? WillPopScope(
               onWillPop: onWillPop,
               child: baseAlertDialog,
@@ -433,6 +436,7 @@ extension ExtensionSnackbar on GetInterface {
         margin: margin ?? const EdgeInsets.symmetric(horizontal: 10),
         duration: duration,
         barBlur: barBlur ?? 7.0,
+        // ignore: deprecated_member_use
         backgroundColor: backgroundColor ?? Colors.grey.withOpacity(0.2),
         icon: icon,
         shouldIconPulse: shouldIconPulse ?? true,

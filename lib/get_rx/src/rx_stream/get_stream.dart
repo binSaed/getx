@@ -1,4 +1,4 @@
-part of rx_stream;
+part of 'package:get/get_rx/src/rx_stream/rx_stream.dart';
 
 /// [GetStream] is the lightest and most performative way of working
 /// with events at Dart. You sintaxe is like StreamController, but it works

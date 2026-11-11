@@ -45,7 +45,7 @@ class RouterReportManager<T> {
   static void appendRouteByCreate(GetLifeCycleBase i) {
     _routesByCreate[_current] ??= HashSet<Function>();
     // _routesByCreate[Get.reference]!.add(i.onDelete as Function);
-    _routesByCreate[_current]!.add(i.onDelete);
+    _routesByCreate[_current]!.add(i.onDelete.call);
   }
 
   static void reportRouteDispose(Route disposed) {

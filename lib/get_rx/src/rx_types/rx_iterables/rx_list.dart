@@ -1,4 +1,4 @@
-part of rx_types;
+part of 'package:get/get_rx/src/rx_types/rx_types.dart';
 
 /// Create a list similar to `List<T>`
 class RxList<E> extends ListMixin<E>
@@ -139,7 +139,7 @@ extension ListExtension<E> on List<E> {
   //   if (item != null) addAll(item);
   // }
 
-  /// Add [item] to List<E> only if [condition] is true.
+  /// Add [item] to `List<E>` only if [condition] is true.
   void addIf(dynamic condition, E item) {
     if (condition is Condition) condition = condition();
     if (condition is bool && condition) add(item);
